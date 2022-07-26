@@ -11,21 +11,11 @@
       <th>Phone</th>
       <th>City</th>
       <th>Age</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.name }}</td>
-      <td>{{ user.lastname }}</td>
-      <td><img [src]="user.picture.thumbnail" [alt]="user.name + user.lastname"></td>
-      <td>{{ user.email }} </td>
-      <td>{{ user.phone }}</td>
-      <td>{{ user.city }}</td>
-      <td>{{ user.age }}</td>
-      <!--<td>
-        <button (click)="editUser(user)">Edit</button>
-        <button (click)="deleteUser(user)">Delete</button>
-      </td>-->
+    <tr app-user *ngFor="let user of users" [user-data] = "user" (onDeleteUser) = "onDeleteUser($event)">
     </tr>
   </tbody>
 </table>
