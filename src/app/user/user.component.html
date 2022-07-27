@@ -1,10 +1,10 @@
-<td>{{ user.name }}</td>
-<td>{{ user.lastname }}</td>
-<td><img [src]="user.picture.thumbnail" [alt]="user.name + user.lastname"></td>
-<td>{{ user.email }} </td>
-<td>{{ user.phone }}</td>
-<td>{{ user.city }}</td>
-<td>{{ user.age }}</td>
+<td>{{ user?.name }}</td>
+<td>{{ user?.lastname }}</td>
+<td><img [src]="user?.picture?.thumbnail" [alt]="user?.name"></td>
+<td>{{ user?.email }} </td>
+<td>{{ user?.phone }}</td>
+<td>{{ user?.city }}</td>
+<td>{{ user?.age }}</td>
 <td>
 <!--<button (click)="editUser(user)">Edit</button>-->
 <button (click)="deleteUser()">Delete</button>
