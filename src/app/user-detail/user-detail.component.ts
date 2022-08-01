@@ -1,6 +1,7 @@
 import { UserService } from './../services/user.services';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../classes/user.class';
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-user-detail',
@@ -8,7 +9,16 @@ import { User } from '../classes/user.class';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
-  @Input() user!: User;
+  private userCopy!: User;
+  private __user!: User;
+  @Input() set user(user: User) {
+    this.__user = user;
+    this.userCopy = Object.assign({}, user);
+  };
+
+  get user() {
+    return this.__user;
+  }
 
   constructor(private userService: UserService) {
   }
@@ -20,7 +30,19 @@ export class UserDetailComponent implements OnInit {
   saveUser(user: User) {
     if(user.id > 0) {
       this.userService.updateUser(this.user);
+    } else {
+      this.userService.createUser(this.user);
     }
   }
+
+  resetForm() {
+    if (this.user.id === 0) {
+      this.user = new User();
+    } else {
+      this.user = this.userCopy;
+    }
+  }
+
+  
 
 }
