@@ -1,0 +1,32 @@
+<form action="">
+    <input type="hidden" name="id" [(ngModel)]="user.id">
+    <div>
+        <label for="name">Name</label>
+        <input [(ngModel)]="user.name" type="text" name="name" id="name">
+    </div>
+    <div>
+        <label for="lastname">Lastname</label>
+        <input [(ngModel)]="user.lastname" type="text" name="lastname" id="lastname">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" type="email" name="email" id="email">
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input [(ngModel)]="user.phone" type="tel" name="phone" id="phone">
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input [(ngModel)]="user.city" type="text" name="city" id="city">
+    </div>
+    <div>
+        <label for="age">Age</label>
+        <input [(ngModel)]="user.age" type="number" name="age" id="age">
+    </div>
+    <div>
+        <label for="picture">Picture</label>
+        <input [(ngModel)]="user.picture" type="image" name="picture" id="picture">
+    </div>
+    <button (click)="saveUser(user)">Save</button>
+</form>
