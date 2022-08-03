@@ -8,16 +8,27 @@ import { User } from './classes/user.class';
 })
 export class AppComponent {
   title = 'ums';
-  showForm : boolean = false;
+  showDati : boolean = false;
+  showDoc : boolean = false;
   userSelected: User = new User();
   
   updateUser(user: User) {
-    this.showForm = true;
+    this.showDati = true;
     this.userSelected = user;
   }
 
   newUser(){
     this.userSelected = new User();
-    this.showForm = true;
+    this.showDati = true;
+  }
+
+  showDocLink(){
+    this.showDoc = true;
+    this.showDati = false;
+  }
+
+  showDatiLink(){
+    this.showDoc = false;
+    this.showDati = true;
   }
 }

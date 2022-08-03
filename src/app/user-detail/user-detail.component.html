@@ -1,33 +1,29 @@
 <form action="" #f="ngForm"> 
     <input type="hidden" name="id" [(ngModel)]="user.id">
-    <div>
-        <label for="name">Name</label>
-        <input [(ngModel)]="user.name" type="text" name="name" id="name">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="name" class="form-label m-0 col-2">Name</label>
+        <input [(ngModel)]="user.name" type="text" name="name" id="name" class="border-0 col-10">
     </div>
-    <div>
-        <label for="lastname">Lastname</label>
-        <input [(ngModel)]="user.lastname" type="text" name="lastname" id="lastname">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="lastname" class="form-label m-0 col-2">Lastname</label>
+        <input [(ngModel)]="user.lastname" type="text" name="lastname" id="lastname"  class="border-0 col-10">
     </div>
-    <div>
-        <label for="email">Email</label>
-        <input [(ngModel)]="user.email" type="email" name="email" id="email">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="email" class="form-label m-0 col-2">Email</label>
+        <input [(ngModel)]="user.email" type="email" name="email" id="email"  class="border-0 col-10">
     </div>
-    <div>
-        <label for="phone">Phone</label>
-        <input [(ngModel)]="user.phone" type="tel" name="phone" id="phone">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="phone" class="form-label m-0 col-2">Phone</label>
+        <input [(ngModel)]="user.phone" type="tel" name="phone" id="phone" class="border-0 col-10">
     </div>
-    <div>
-        <label for="city">City</label>
-        <input [(ngModel)]="user.city" type="text" name="city" id="city">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="city" class="form-label m-0 col-2">City</label>
+        <input [(ngModel)]="user.city" type="text" name="city" id="city" class="border-0 col-10">
     </div>
-    <div>
-        <label for="age">Age</label>
-        <input [(ngModel)]="user.age" type="number" name="age" id="age">
+    <div class="border-bottom d-flex align-items-center row">
+        <label for="age" class="form-label m-0 col-2">Age</label>
+        <input [(ngModel)]="user.age" type="number" name="age" id="age" class="border-0 col-10">
     </div>
-    <div>
-        <label for="picture">Picture</label>
-        <input [(ngModel)]="user.picture" type="image" name="picture" id="picture">
-    </div>
-    <button (click)="saveUser(user)">Save</button>
-    <button (click)="resetForm()">Reset</button>
+    <button (click)="saveUser(user)" class="btn btn-primary">Save</button>
+    <button (click)="resetForm()" class="btn btn-danger">Reset</button>
 </form>

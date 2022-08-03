@@ -10,6 +10,7 @@ import { User } from '../classes/user.class';
 
 export class UsersComponent {
     title = 'Users';
+    caption = "Users list is a array of User objects";
     public users: User[] = [];
     @Output() updateUser = new EventEmitter<User>();
 

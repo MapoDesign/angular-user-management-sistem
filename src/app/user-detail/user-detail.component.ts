@@ -1,7 +1,6 @@
 import { UserService } from './../services/user.services';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../classes/user.class';
-import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-user-detail',

@@ -1,9 +1,25 @@
 <h1>User management system</h1>
-<button (click)="newUser()">Click me!</button>
-<div>
-    <app-users (updateUser)="updateUser($event)"></app-users>
+<button (click)="newUser()" class="btn btn-primary">Add new user</button>
+
+<div *ngIf="showDati || showDoc" class="card mb-2">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#dati" (click)="showDatiLink()">Dati personali</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#doc" (click)="showDocLink()">Documenti</a>
+      </li>
+    </ul>
+  </div> 
+  <div *ngIf="showDati" class="card-body">
+    <app-user-detail [user]="userSelected"></app-user-detail>
+  </div>    
+  <div *ngIf="showDoc" class="card-body">
+  documenti
+  </div>
 </div>
 
-<div *ngIf="showForm">
-    <app-user-detail [user]="userSelected"></app-user-detail>
+<div class="card">
+  <app-users (updateUser)="updateUser($event)"></app-users>
 </div>
